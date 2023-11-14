@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="stock_minimum_action" model="ir.actions.server">
+		<field name="name">Alerte Stock Minimum</field>
+		<field name="type">ir.actions.server</field>
+		<field name="model_id" ref="product.model_product_template" />
+		<field name="state">code</field>
+		<field name="code">
+			action = model.show_stock_minimum()
+		</field>
+	</record>
+	
+	<menuitem id="alert_stock_minimum_menu" name="Alerte Stock Minimum" parent="stock.menu_warehouse_report" action="stock_minimum_action"/>
+</odoo>
